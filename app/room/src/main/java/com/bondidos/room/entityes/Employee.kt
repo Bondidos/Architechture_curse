@@ -1,12 +1,32 @@
 package com.bondidos.room.entityes
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import android.graphics.Bitmap
+import androidx.room.*
+import androidx.room.ColumnInfo.TEXT
 
-@Entity(tableName = "employees")
+@Entity(tableName = "employees",indices = [Index("salary"), Index(value = ["first_name","second_name"])])
 data class Employee (
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     val id: Long,
-    val name: String,
-    val salary: Int
+
+    @ColumnInfo(name = "first_name")
+    val firstName: String,
+
+    @ColumnInfo(name = "second_name")
+    val secondName: String,
+
+    @ColumnInfo(typeAffinity = TEXT)
+    val salary: Int,
+
+    @Embedded(prefix = "address")
+    val address: Address,
+
+    @Ignore
+    val avatar: Bitmap
     )
+
+data class Address (
+    var city: String? = null,
+    var street: String? = null,
+    var number: Int = 0
+)
