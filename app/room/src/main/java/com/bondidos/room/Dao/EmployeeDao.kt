@@ -1,20 +1,19 @@
 package com.bondidos.room.Dao
 
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
+import androidx.room.OnConflictStrategy.REPLACE
 import com.bondidos.room.entityes.Employee
 
+@Dao
 interface EmployeeDao {
 
-    @Query("SELECT * FROM employee")
+    @Query("SELECT * FROM employees")
     fun getAll(): List<Employee>
 
-    @Query("SELECT * FROM employee where id = :id")
+    @Query("SELECT * FROM employees where id = :id")
     fun getById(id: Long): Employee
 
-    @Insert
+    @Insert(onConflict = REPLACE)
     fun insert(employee: Employee)
 
     @Update

@@ -15,7 +15,6 @@ data class Employee (
     @ColumnInfo(name = "second_name")
     val secondName: String,
 
-    @ColumnInfo(typeAffinity = TEXT)
     val salary: Int,
 
     @Embedded(prefix = "address")

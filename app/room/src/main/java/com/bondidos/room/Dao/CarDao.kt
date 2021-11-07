@@ -13,8 +13,8 @@ interface CarDao {
     fun getAll()
 
     @Insert
-    fun insert(car: Car)
+    fun insert(car: Car): Long
 
     @Delete
-    fun delete(car: Car)
+    fun delete(car: Car): Int
 }
