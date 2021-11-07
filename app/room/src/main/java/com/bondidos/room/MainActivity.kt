@@ -2,7 +2,7 @@ package com.bondidos.room
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.bondidos.room.Dao.EmployeeDao
+import com.bondidos.room.dao.EmployeeDao
 import com.bondidos.room.entityes.Employee
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -20,14 +20,5 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         employeeDao = db.employeeDao()
-
-        employeeDao.insert(
-            Employee(
-            1,
-                "John Smith",
-                10000
-        )
-        )
-
     }
 }

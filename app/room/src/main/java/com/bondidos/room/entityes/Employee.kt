@@ -2,10 +2,9 @@ package com.bondidos.room.entityes
 
 import android.graphics.Bitmap
 import androidx.room.*
-import androidx.room.ColumnInfo.TEXT
 
 @Entity(tableName = "employees",indices = [Index("salary"), Index(value = ["first_name","second_name"])])
-data class Employee (
+data class Employee(
     @PrimaryKey(autoGenerate = true)
     val id: Long,
 
@@ -13,7 +12,7 @@ data class Employee (
     val firstName: String,
 
     @ColumnInfo(name = "second_name")
-    val secondName: String,
+    val secondName: Int,
 
     val salary: Int,
 

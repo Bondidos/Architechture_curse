@@ -2,8 +2,8 @@ package com.bondidos.room
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.bondidos.room.Dao.CarDao
-import com.bondidos.room.Dao.EmployeeDao
+import com.bondidos.room.dao.CarDao
+import com.bondidos.room.dao.EmployeeDao
 import com.bondidos.room.entityes.Car
 import com.bondidos.room.entityes.Employee
 
