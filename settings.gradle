@@ -10,3 +10,4 @@ rootProject.name = "Architechture_curse"
 include ':app'
 include ':app:lifecycle'
 include ':app:room'
+include ':app:paging'
